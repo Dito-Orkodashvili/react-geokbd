@@ -13,15 +13,19 @@ npm install --save react-geokbd
 ## Usage
 
 ```jsx
-import React, { Component } from 'react'
+import React from 'react'
+import { useGeoField } from 'react-geokbd'
 
-import MyComponent from 'react-geokbd'
-import 'react-geokbd/dist/index.css'
+const App = () => {
+  const [fieldValue, setFieldValue] = useGeoField()
 
-class Example extends Component {
-  render() {
-    return <MyComponent />
-  }
+  return (
+    <input
+      type='text'
+      value={fieldValue}
+      onChange={setFieldValue}
+    />
+  )
 }
 ```
 

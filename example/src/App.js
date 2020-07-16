@@ -1,10 +1,28 @@
 import React from 'react'
 
-import { ExampleComponent } from 'react-geokbd'
-import 'react-geokbd/dist/index.css'
+import { useGeoField } from 'react-geokbd'
 
 const App = () => {
-  return <ExampleComponent text="Create React Library Example 😄" />
+  const [fieldValue, setFieldValue] = useGeoField()
+
+  return (
+    <div
+      style={{
+        padding: 10
+      }}
+    >
+      <p>ენის შესაცვლელად დააჭირეთ ' ` '-ს</p>
+      <input
+        type="text"
+        value={fieldValue}
+        onChange={setFieldValue}
+        placeholder='ფლეისჰოლდერი'
+        style={{
+          padding: 5
+        }}
+      />
+    </div>
+  )
 }
 
 export default App
